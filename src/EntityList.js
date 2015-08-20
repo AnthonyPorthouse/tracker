@@ -1,11 +1,11 @@
-EntityList = function () {
-    var list = [];
+export default class EntityList
+{
+    constructor(options) {
+        this.list = [];
+    }
 
-    return {
-        addEntity: function (entity) {
-            list.push(entity);
-        }
+    addEntity (entity)
+    {
+        this.list.push(entity);
     }
 };
-
-module.exports = EntityList;

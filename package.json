@@ -4,8 +4,12 @@
   "description": "A Combat Tracker built on top of Atom Electron",
   "author": "Anthony Porthouse <anthony@porthou.se>",
   "main": "main.js",
+  "dependencies": {
+    "electron-compile": "^0.8.3"
+  },
   "devDependencies": {
-    "electron-prebuilt": "^0.30.4"
+    "electron-prebuilt": "^0.30.4",
+    "eslint": "^1.2.1"
   },
   "private": true,
   "license": "MIT"

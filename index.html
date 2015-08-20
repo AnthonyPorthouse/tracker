@@ -13,9 +13,13 @@ and Electron
 <script>document.write(process.versions['electron'])</script>
 
 <script>
-    var EntityList = require('./src/EntityList');
+    import EntityList from './src/EntityList';
+    import Entity from './src/Entities/Entity';
 
-    var entityList = new EntityList;
+    let entityList = new EntityList;
+
+    let entity = new Entity('Sarola Silverskin');
+    entityList.addEntity(entity);
 
     console.log(entityList);
 </script>
