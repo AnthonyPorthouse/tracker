@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World!</title>
+    <title>Tracker</title>
+    <meta charset="utf-8">
 </head>
 
 <body>
@@ -14,14 +15,19 @@ and Electron
 
 <script>
     import EntityList from '../src/EntityList';
-    import Entity from '../src/Entities/Entity';
+    import PC from '../src/Entities/PC';
 
     let entityList = new EntityList;
 
-    let entity = new Entity('Sarola Silverskin');
-    entityList.addEntity(entity);
+    entityList.addEntity(new PC('Sarola Silverskin', 20));
+    entityList.addEntity(new PC('Arrario', 15));
 
     console.log(entityList);
+
+    for (let entity of entityList.getList()) {
+        console.log(entity, entity.toString());
+    }
+
 </script>
 
 </body>

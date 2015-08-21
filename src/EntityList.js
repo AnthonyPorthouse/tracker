@@ -4,8 +4,14 @@ export default class EntityList
         this.list = [];
     }
 
+    getList ()
+    {
+        return this.list;
+    }
+
     addEntity (entity)
     {
         this.list.push(entity);
     }
+
 }

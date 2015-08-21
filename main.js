@@ -13,7 +13,7 @@ app.on('window-all-closed', function() {
 
 app.on('ready', function() {
     require('electron-compile').init();
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow({width: 1280, height: 720});
     mainWindow.loadUrl('file://' + __dirname + '/static/index.html');
     mainWindow.openDevTools();
 
