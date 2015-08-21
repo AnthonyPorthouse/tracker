@@ -4,4 +4,4 @@ export default class Entity
     {
         this.name = name;
     }
-};
+}
