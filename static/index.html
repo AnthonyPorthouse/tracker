@@ -9,36 +9,40 @@
 
 <body>
 
-<div id="tracker"></div>
+    <h1>Round <span id="round">0</span></h1>
+    <div id="tracker"></div>
+
+    <button id="start">Start Combat</button>
+    <button id="next">Next</button>
 
 <script src="menu.js" charset="utf-8"></script>
-<script>
-    document.addEventListener('tracker:alert', function(e) {
-        alert(e.detail.message);
-    })
-</script>
+<script src="events.js"></script>
 <script>
     import Combat from '../src/Combat';
     import EntityList from '../src/EntityList';
     import PC from '../src/Entities/PC';
+    import Alert from '../src/Alerts/Alert';
     import Timer from '../src/Alerts/Timer';
 
-    let combat = new Combat()
+    let combat = new Combat();
+
+    document.querySelector('#start').addEventListener('click', function(e) {
+        e.preventDefault();
+        combat.start();
+    }, false);
+
+    document.querySelector('#next').addEventListener('click', function(e) {
+        e.preventDefault();
+
+        combat.next();
+        combat.step();
+    }, false);
 
     combat.entityList.addEntity(new PC('Sarola Silverskin', 20));
     combat.entityList.addEntity(new PC('Arrario', 15));
 
     combat.entityList.getEntity(0).addAlert(new Timer('Roll to shrug Poison', 3));
-
-    for (let entity of combat.entityList.getList()) {
-        console.log(entity, entity.toString());
-    }
-
-    for (let stepCount = 0; stepCount < 12; stepCount++) {
-        console.log(combat.toString());
-        combat.step();
-        combat.next();
-    }
+    combat.entityList.getEntity(1).addAlert(new Alert('Try not to die'));
 </script>
 
 </body>

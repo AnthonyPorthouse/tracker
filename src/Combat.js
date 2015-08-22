@@ -13,6 +13,42 @@ export default class Combat
         this.round = 0;
         // The position within the current round
         this.currentStep = 0;
+
+        this.started = false;
+
+        this.dispatchRoundChanged();
+    }
+
+    dispatchCombatStarted()
+    {
+        console.log(`Dispatching Combat Started: ${this.toString()}`);
+        let event = new CustomEvent('tracker:combatStarted', {
+            detail: {
+                combat: this
+            }
+        });
+
+        document.dispatchEvent(event);
+    }
+
+    dispatchRoundChanged()
+    {
+        console.log(`Dispatching Round Changed: ${this.toString()}`);
+        let event = new CustomEvent('tracker:roundChanged', {
+            detail: {
+                round: this.round,
+                step: this.currentStep,
+                combat: this
+            }
+        });
+
+        document.dispatchEvent(event);
+    }
+
+    start()
+    {
+        this.started = true;
+        this.step();
     }
 
     /**
@@ -28,6 +64,8 @@ export default class Combat
             this.currentStep = 0;
             this.round++;
         }
+
+        this.dispatchRoundChanged();
     }
 
     step()
@@ -39,11 +77,7 @@ export default class Combat
         console.log(`${entity.name} has ${entity.alerts.length} alerts`);
         if (entity.hasAlerts()) {
             for (let alert of entity.getAlerts()) {
-                let event = new CustomEvent('tracker:alert', {
-                    detail: alert
-                });
-                document.dispatchEvent(event);
-                console.log(`Alert: ${alert.toString()}`);
+                alert.dispatch();
             }
         }
     }

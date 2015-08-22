@@ -12,7 +12,16 @@ export default class alert
 
     tick()
     {
-        
+
+    }
+
+    dispatch()
+    {
+        console.log(`Dispatching Alert: ${this.toString()}`);
+        let event = new CustomEvent('tracker:alert', {
+            detail: this
+        });
+        document.dispatchEvent(event);
     }
 
 
