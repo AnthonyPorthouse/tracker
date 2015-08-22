@@ -3,16 +3,16 @@
 <head>
     <title>Tracker</title>
     <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="css/theme.scss">
 </head>
 
 <body>
-<h1>Hello World!</h1>
 
-We are using io.js
-<script>document.write(process.version)</script>
-and Electron
-<script>document.write(process.versions['electron'])</script>
 
+<div id="tracker"></div>
+
+<script src="menu.js" charset="utf-8"></script>
 <script>
     import EntityList from '../src/EntityList';
     import PC from '../src/Entities/PC';
@@ -27,7 +27,6 @@ and Electron
     for (let entity of entityList.getList()) {
         console.log(entity, entity.toString());
     }
-
 </script>
 
 </body>
