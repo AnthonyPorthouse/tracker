@@ -22,7 +22,7 @@ document.addEventListener('tracker:EntityListUpdated', function(e) {
     let string = '<ul>';
     entityList.getList().forEach(function(element, index) {
         let active = (index == 0) ? 'class="active"' : '';
-        string += `<li ${active}>${element.toString()}</li>`;
+        string += `<li class="entity" ${active}>${element.toString()}</li>`;
     });
     string += '</ul>';
     el.innerHTML = string;

@@ -36,9 +36,7 @@ let template = [
             {
                 label: 'Reload',
                 accelerator: 'CmdOrCtrl+R',
-                click: function () {
-                    document.location.reload(true);
-                }
+                click: () => remote.getCurrentWindow().reload(true)
             }
         ]
     }

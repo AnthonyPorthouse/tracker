@@ -13,7 +13,7 @@
     <div id="tracker"></div>
 
     <button id="start">Start Combat</button>
-    <button id="next">Next</button>
+    <button id="next" style="display:none">Next</button>
 
 <script src="menu.js" charset="utf-8"></script>
 <script src="events.js"></script>
@@ -29,6 +29,8 @@
 
     document.querySelector('#start').addEventListener('click', function(e) {
         e.preventDefault();
+        this.style.display = 'none';
+        document.querySelector('#next').style.display = null;
         combat.start();
     }, false);
 
