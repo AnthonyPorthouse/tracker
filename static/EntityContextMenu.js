@@ -4,10 +4,10 @@ let BrowserWindow = remote.require('browser-window');
 
 let menu = Menu.buildFromTemplate([
     {
-        label: "Thing"
+        label: "Add Alert"
     },
     {
-        label: "Thing 2"
+        label: "Add Timer"
     }
 ]);
 

@@ -21,8 +21,8 @@ document.addEventListener('tracker:EntityListUpdated', function(e) {
     let el = document.querySelector('#tracker');
     let string = '<ul>';
     entityList.getList().forEach(function(element, index) {
-        let active = (index == 0) ? 'class="active"' : '';
-        string += `<li class="entity" ${active}>${element.toString()}</li>`;
+        let active = (index == 0) ? 'active"' : '';
+        string += `<li class="entity ${active}" data-entity-id="${index}">${element.toString()}</li>`;
     });
     string += '</ul>';
     el.innerHTML = string;
@@ -31,3 +31,23 @@ document.addEventListener('tracker:EntityListUpdated', function(e) {
 document.addEventListener('tracker:alert', function(e) {
     alert(e.detail.message);
 });
+
+document.querySelector('#tracker').addEventListener('contextmenu', function(e) {
+    if (e.target.className.indexOf('entity') !== -1) {
+        require('./EntityContextMenu').popupMenu();
+    }
+});
+
+document.querySelector('#start').addEventListener('click', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.querySelector('#next').style.display = null;
+    combat.start();
+}, false);
+
+document.querySelector('#next').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    combat.next();
+    combat.step();
+}, false);

@@ -27,20 +27,6 @@
 
     let combat = new Combat();
 
-    document.querySelector('#start').addEventListener('click', function(e) {
-        e.preventDefault();
-        this.style.display = 'none';
-        document.querySelector('#next').style.display = null;
-        combat.start();
-    }, false);
-
-    document.querySelector('#next').addEventListener('click', function(e) {
-        e.preventDefault();
-
-        combat.next();
-        combat.step();
-    }, false);
-
     combat.entityList.addEntity(new PC('Sarola Silverskin', 20));
     combat.entityList.addEntity(new PC('Arrario', 15));
     combat.entityList.addEntity(new PC('Ariana', 23));
