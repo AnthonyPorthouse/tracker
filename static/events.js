@@ -2,7 +2,7 @@
 document.addEventListener('tracker:roundChanged', function(e) {
     let round = e.detail.round;
     let step = e.detail.step;
-    document.querySelector('#round').innerHTML = round;
+    document.querySelector('#round').innerHTML = round + 1;
 
     let i = 0;
     Array.prototype.forEach.call(document.querySelectorAll('#tracker li'), function(el, index) {
