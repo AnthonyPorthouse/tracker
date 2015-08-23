@@ -20,7 +20,12 @@ export default class EntityList
     addEntity (entity)
     {
         this.list.push(entity);
+        this.dispatchEntityListUpdated();
+    }
 
+    reorder()
+    {
+        this.list.sort((a, b) => b.getInitiative().toString().localeCompare(a.getInitiative().toString()));
         this.dispatchEntityListUpdated();
     }
 

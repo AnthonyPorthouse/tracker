@@ -48,6 +48,7 @@ export default class Combat
     start()
     {
         this.started = true;
+        this.entityList.reorder();
         this.step();
     }
 
