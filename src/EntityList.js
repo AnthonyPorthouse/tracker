@@ -25,7 +25,13 @@ export default class EntityList
 
     reorder()
     {
-        this.list.sort((a, b) => b.getInitiative().toString().localeCompare(a.getInitiative().toString()));
+        this.list.sort((a, b) => b.getInitiative().toString().localeCompare(
+            a.getInitiative().toString(),
+            {},
+            {
+                numeric: true
+            }
+        ));
         this.dispatchEntityListUpdated();
     }
 
