@@ -29,6 +29,18 @@ let template = [
                 label: 'Add NPC'
             }
         ]
+    },
+    {
+        label: 'Dev',
+        submenu: [
+            {
+                label: 'Reload',
+                accelerator: 'CmdOrCtrl+R',
+                click: function () {
+                    document.location.reload(true);
+                }
+            }
+        ]
     }
 ];
 
