@@ -7,9 +7,9 @@ document.addEventListener('tracker:roundChanged', function(e) {
     let i = 0;
     Array.prototype.forEach.call(document.querySelectorAll('#tracker li'), function(el, index) {
         if (index == step) {
-            el.className = 'active';
+            el.className = 'entity active';
         } else {
-            el.className = '';
+            el.className = 'entity';
         }
 
         i++;

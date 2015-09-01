@@ -16,3 +16,9 @@ h1 {
     font-size: 1.5rem;
     margin: 0.66rem 0;
 }
+
+button {
+    border: 0.125rem solid $base2;
+    background: $base01;
+    color: $base2;
+}
