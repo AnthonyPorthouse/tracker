@@ -1,0 +1,15 @@
+#tracker {
+
+    ul {
+        padding-left: 0;
+    }
+
+    .entity {
+        list-style: none;
+    }
+
+    .active {
+        background: $base02;
+        color: $base1;
+    }
+}
