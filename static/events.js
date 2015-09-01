@@ -21,7 +21,7 @@ document.addEventListener('tracker:EntityListUpdated', function(e) {
     let el = document.querySelector('#tracker');
     let string = '<ul>';
     entityList.getList().forEach(function(element, index) {
-        let active = (index == 0) ? 'active"' : '';
+        let active = (index == 0 && combat.started) ? 'active"' : '';
         string += `<li class="entity ${active}" data-entity-id="${index}">${element.toString()}</li>`;
     });
     string += '</ul>';
