@@ -2,7 +2,7 @@ export default class alert
 {
     constructor (message)
     {
-        this.message = message
+        this.message = message;
     }
 
     getMessage()
