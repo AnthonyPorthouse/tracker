@@ -6,6 +6,10 @@
 
     .entity {
         list-style: none;
+
+        .name {
+            color: $green;
+        }
     }
 
     .active {

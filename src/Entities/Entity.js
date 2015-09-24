@@ -36,6 +36,6 @@ export default class Entity
 
     toString()
     {
-        return `${this.name} (${this.initiative})`;
+        return `<span class="name">${this.name}</span> (<span class="initiative">${this.initiative}</span>)`;
     }
 }
